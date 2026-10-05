@@ -10,6 +10,7 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 /* ------------------------------------------------------------------ */
@@ -299,12 +300,12 @@ export default function WatchScroll() {
               Built to be serviced, not replaced. Worn for a lifetime, then handed down.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://shop.hodinkee.com" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Explore the Collection
-              </a>
-              <a href="https://www.hodinkee.com" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-                Read the Story
-              </a>
+              <Link href="/watch" className="btn-primary">
+                Discover Reference 01
+              </Link>
+              <Link href="/movement" className="btn-ghost">
+                Explore the Movement
+              </Link>
             </div>
           </Beat>
 
