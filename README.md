@@ -2,6 +2,23 @@
 
 A scroll-driven exploded view of a mechanical chronograph. Built with Next.js 14 (App Router), Tailwind CSS, Framer Motion and an HTML5 canvas image sequence.
 
+## Pages
+
+| Route | What's there |
+| --- | --- |
+| `/` | Scroll-driven exploded view, then overview, chapters, key numbers, journal teaser |
+| `/watch` | Reference 01: photo gallery, highlights, dial feature, full specifications |
+| `/movement` | Interactive exploded view with numbered hotspots, then each part explained |
+| `/craft` | Six stages from design to quality control |
+| `/journal` | Featured story + list; each story at `/journal/[slug]` |
+| `/contact` | Contact form + FAQ |
+
+Content (specs, parts, craft steps, articles) lives in `lib/content.ts`; nav and site settings in `lib/site.ts`.
+
+### Contact form
+
+The form opens the visitor's email app addressed to `NEXT_PUBLIC_CONTACT_EMAIL`. Set it in Vercel → Project → Settings → Environment Variables, then redeploy. Until it's set, the form shows a "not set up yet" message.
+
 ## Run locally
 
 ```bash
