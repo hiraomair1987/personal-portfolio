@@ -24,6 +24,7 @@ A separate landing page for Aetherion, a luxury space-travel concept. It has its
 - **Sections** — destinations, life aboard, crew, booking form, app promo and footer, one component each in `components/aetherion/`.
 - **Content** — `lib/aetherion.ts` (copy, destinations, crew). **Images** — `lib/aetherion-assets.ts` lists every image slot with its OpenArt prompt; see `docs/aetherion-assets.md`. Drop a generated file into `public/aetherion/` and rebuild — missing files show a labelled placeholder.
 - **Booking form** — demo only. Wire `submitEnquiry` in `lib/aetherion-enquiry.ts` to a real endpoint to go live.
+- **Own Vercel project** — set `SITE=aetherion` and the root URL serves the Aetherion page (see `next.config.mjs`).
 - **Optional env vars** — `NEXT_PUBLIC_AETHERION_CONTACT` (footer email), `NEXT_PUBLIC_AETHERION_APP_STORE_URL`, `NEXT_PUBLIC_AETHERION_PLAY_STORE_URL` (store buttons switch from "Coming soon" to links).
 
 ### Contact form
