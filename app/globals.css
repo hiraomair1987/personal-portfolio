@@ -140,3 +140,253 @@
     animation-duration: 3s;
   }
 }
+
+/* ---------------------------------------------------------------- Aetherion */
+
+@layer components {
+  .aetherion {
+    font-feature-settings: normal;
+  }
+  .aetherion ::selection {
+    background: #d6b46a;
+    color: #081322;
+  }
+  .aetherion :focus-visible {
+    outline: 2px solid #72cfc5;
+    outline-offset: 3px;
+  }
+
+  .aeth-shell {
+    @apply mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-12;
+  }
+  .aeth-section {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .aeth-wordmark {
+    background: linear-gradient(180deg, #f3e2ad 0%, #d6b46a 42%, #eef2f6 62%, #b99a58 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding-left: 0.3em; /* balance the trailing letter-spacing */
+  }
+
+  .aeth-nav-link {
+    @apply relative text-[12px] font-medium uppercase tracking-[0.22em] text-aeth-silver/75 transition-colors duration-300 hover:text-white;
+  }
+  .aeth-nav-link::after {
+    content: "";
+    @apply absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-aeth-gold transition-transform duration-500;
+  }
+  .aeth-nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .aeth-btn-gold {
+    @apply inline-flex items-center justify-center rounded-full font-semibold uppercase tracking-[0.18em] text-aeth-void transition-[filter,box-shadow] duration-300;
+    background: linear-gradient(180deg, #e6cb8a, #d6b46a 55%, #c4a157);
+    box-shadow: 0 10px 30px -12px rgba(214, 180, 106, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+  .aeth-btn-gold:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 14px 36px -12px rgba(214, 180, 106, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .aeth-btn-light {
+    @apply inline-flex h-12 items-center justify-center rounded-full px-8 text-[11px] font-semibold uppercase tracking-[0.22em] text-aeth-void transition-[transform,box-shadow] duration-300 hover:-translate-y-px sm:h-[52px] sm:px-10;
+    background: linear-gradient(180deg, #ffffff, #d7dfe8);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4), 0 12px 40px -10px rgba(215, 223, 232, 0.55);
+  }
+  .aeth-btn-light:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6), 0 16px 48px -10px rgba(215, 223, 232, 0.75);
+  }
+
+  .aeth-btn-outline {
+    @apply inline-flex h-11 items-center justify-center rounded-full border border-aeth-silver/25 px-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-aeth-silver transition-colors duration-300 hover:border-aeth-gold hover:text-white;
+  }
+
+  .aeth-icon-btn {
+    @apply grid h-11 w-11 place-items-center rounded-full border border-white/15 text-white transition-colors duration-300 hover:border-aeth-gold/70 hover:bg-white/[0.06];
+  }
+
+  .aeth-link {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-aeth-gold transition-colors duration-300 hover:text-white;
+  }
+
+  .aeth-card {
+    @apply rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-white/[0.035] to-white/[0.01];
+  }
+
+  .aeth-badge {
+    @apply inline-flex h-6 items-center rounded-full border border-aeth-teal/45 bg-aeth-void/70 px-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-aeth-teal backdrop-blur-sm;
+  }
+  .aeth-badge--concept {
+    @apply border-aeth-gold/45 text-aeth-gold;
+  }
+
+  .aeth-label {
+    @apply mb-2 block text-[11px] font-semibold uppercase tracking-[0.22em] text-aeth-silver/70;
+  }
+  .aeth-input {
+    @apply block w-full rounded-xl border border-white/[0.12] bg-aeth-void/60 px-4 py-3 text-[15px] text-white placeholder:text-aeth-silver/35 transition-colors duration-200 hover:border-white/25 focus:border-aeth-teal focus:outline-none;
+  }
+  select.aeth-input {
+    @apply appearance-none bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23D7DFE8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-position: right 1rem center;
+    background-size: 14px;
+  }
+  .aeth-input[aria-invalid="true"] {
+    @apply border-[#f2a7a0]/70;
+  }
+
+  .aeth-store {
+    @apply inline-flex min-w-[170px] flex-col rounded-2xl border border-white/15 px-5 py-3 transition-colors duration-300;
+  }
+  a.aeth-store:hover {
+    @apply border-aeth-gold/60;
+  }
+
+  /* Empty image slot: a quiet navy field with a little starlight. */
+  .aeth-slot {
+    background:
+      radial-gradient(1px 1px at 18% 22%, rgba(215, 223, 232, 0.6), transparent),
+      radial-gradient(1px 1px at 72% 34%, rgba(215, 223, 232, 0.45), transparent),
+      radial-gradient(1px 1px at 46% 68%, rgba(215, 223, 232, 0.4), transparent),
+      radial-gradient(1px 1px at 86% 76%, rgba(215, 223, 232, 0.5), transparent),
+      radial-gradient(120% 90% at 50% 0%, rgba(114, 207, 197, 0.1), transparent 60%),
+      linear-gradient(160deg, #142a45, #081322 70%);
+  }
+
+  /* Hero sky: navy bloom behind the headline over a fine starfield. */
+  .aeth-sky {
+    background:
+      radial-gradient(1px 1px at 8% 14%, rgba(255, 255, 255, 0.7), transparent),
+      radial-gradient(1px 1px at 21% 38%, rgba(255, 255, 255, 0.45), transparent),
+      radial-gradient(1.5px 1.5px at 33% 9%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 41% 52%, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(1px 1px at 58% 18%, rgba(255, 255, 255, 0.55), transparent),
+      radial-gradient(1px 1px at 66% 44%, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(1.5px 1.5px at 79% 11%, rgba(255, 255, 255, 0.65), transparent),
+      radial-gradient(1px 1px at 88% 36%, rgba(255, 255, 255, 0.45), transparent),
+      radial-gradient(1px 1px at 95% 58%, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(1px 1px at 4% 62%, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(70% 50% at 50% 22%, rgba(20, 42, 69, 0.95), transparent 75%),
+      #081322;
+  }
+
+  /* ---- Planets. --front (0 in orbit → 1 at the front) is set per frame. */
+  .planet {
+    position: relative;
+    border-radius: 9999px;
+  }
+  .planet__body {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    box-shadow:
+      0 0 calc(18px + 42px * var(--front, 0)) calc(-4px + 2px * var(--front, 0)) var(--p-glow),
+      inset 0 2px 6px rgba(255, 255, 255, 0.18);
+    isolation: isolate;
+  }
+  .planet__surface {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 34% 28%, var(--p-light), var(--p-base) 42%, var(--p-shadow) 92%);
+  }
+  .planet__surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: soft-light;
+  }
+  .planet__surface--earth::after {
+    mix-blend-mode: normal;
+    background:
+      radial-gradient(18% 12% at 30% 34%, rgba(88, 140, 80, 0.75), transparent 70%),
+      radial-gradient(14% 20% at 58% 30%, rgba(160, 140, 90, 0.7), transparent 70%),
+      radial-gradient(22% 10% at 66% 58%, rgba(70, 120, 70, 0.6), transparent 70%),
+      radial-gradient(40% 6% at 40% 46%, rgba(255, 255, 255, 0.55), transparent 70%),
+      radial-gradient(30% 5% at 62% 70%, rgba(255, 255, 255, 0.45), transparent 70%),
+      radial-gradient(26% 4% at 30% 18%, rgba(255, 255, 255, 0.5), transparent 70%);
+  }
+  .planet__surface--craters::after {
+    background:
+      radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.35) 0 6%, transparent 7%),
+      radial-gradient(circle at 58% 26%, rgba(0, 0, 0, 0.3) 0 4%, transparent 5%),
+      radial-gradient(circle at 64% 60%, rgba(0, 0, 0, 0.35) 0 8%, transparent 9%),
+      radial-gradient(circle at 40% 72%, rgba(0, 0, 0, 0.25) 0 5%, transparent 6%),
+      radial-gradient(30% 22% at 46% 48%, rgba(0, 0, 0, 0.35), transparent 70%),
+      radial-gradient(22% 16% at 70% 36%, rgba(0, 0, 0, 0.3), transparent 70%);
+  }
+  .planet__surface--dust::after {
+    background:
+      radial-gradient(34% 12% at 50% 50%, rgba(60, 20, 10, 0.6), transparent 70%),
+      radial-gradient(20% 16% at 34% 34%, rgba(60, 20, 10, 0.45), transparent 70%),
+      radial-gradient(30% 8% at 50% 6%, rgba(255, 255, 255, 0.9), transparent 70%),
+      radial-gradient(18% 14% at 68% 66%, rgba(255, 210, 170, 0.5), transparent 70%);
+  }
+  .planet__surface--ice::after {
+    mix-blend-mode: multiply;
+    background:
+      repeating-linear-gradient(32deg, transparent 0 9%, rgba(150, 70, 40, 0.35) 9% 9.6%, transparent 9.6% 17%),
+      repeating-linear-gradient(-58deg, transparent 0 13%, rgba(150, 70, 40, 0.3) 13% 13.5%, transparent 13.5% 21%);
+  }
+  .planet__surface--bands::after {
+    background: repeating-linear-gradient(
+      172deg,
+      rgba(255, 255, 255, 0.28) 0 6%,
+      rgba(90, 50, 20, 0.35) 6% 9%,
+      rgba(255, 240, 210, 0.2) 9% 15%,
+      rgba(120, 70, 30, 0.3) 15% 19%
+    );
+  }
+  .planet__surface--haze::after {
+    mix-blend-mode: normal;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 62%, rgba(255, 210, 140, 0.4) 72%, transparent 76%),
+      linear-gradient(180deg, rgba(255, 220, 160, 0.35), transparent 40%);
+  }
+  .planet__shade {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.22), transparent 28%),
+      radial-gradient(circle at 38% 32%, transparent 46%, rgba(8, 19, 34, 0.88) 80%);
+  }
+  .planet__photo {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: var(--img-h, 100%);
+    opacity: var(--front, 0);
+  }
+  .planet__photo-wash {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(8, 19, 34, 0.15), transparent 30%, rgba(8, 19, 34, 0.55));
+  }
+  .planet__ring {
+    position: absolute;
+    left: -62%;
+    top: 30%;
+    width: 224%;
+    height: 40%;
+    border-radius: 50%;
+    transform: rotate(-14deg);
+    background: radial-gradient(
+      closest-side,
+      transparent 58%,
+      rgba(231, 210, 160, 0.15) 60%,
+      rgba(231, 210, 160, 0.7) 70%,
+      rgba(214, 180, 106, 0.35) 82%,
+      rgba(231, 210, 160, 0.55) 88%,
+      transparent 100%
+    );
+    opacity: calc(1 - var(--front, 0));
+  }
+  .planet__ring--front {
+    clip-path: inset(50% 0 0 0);
+    z-index: 1;
+  }
+}
