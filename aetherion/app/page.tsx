@@ -1,11 +1,11 @@
-import AetherionFooter from "@/components/aetherion/AetherionFooter";
-import AetherionHeader from "@/components/aetherion/AetherionHeader";
-import AetherionHero from "@/components/aetherion/AetherionHero";
-import AppSection from "@/components/aetherion/AppSection";
-import BookingSection from "@/components/aetherion/BookingSection";
-import CrewSection from "@/components/aetherion/CrewSection";
-import DestinationsSection from "@/components/aetherion/DestinationsSection";
-import LifeAboardSection from "@/components/aetherion/LifeAboardSection";
+import AetherionFooter from "@/components/AetherionFooter";
+import AetherionHeader from "@/components/AetherionHeader";
+import AetherionHero from "@/components/AetherionHero";
+import AppSection from "@/components/AppSection";
+import BookingSection from "@/components/BookingSection";
+import CrewSection from "@/components/CrewSection";
+import DestinationsSection from "@/components/DestinationsSection";
+import LifeAboardSection from "@/components/LifeAboardSection";
 import { appPromo, destinations } from "@/lib/aetherion";
 import { resolveAssets } from "@/lib/aetherion-assets.server";
 
